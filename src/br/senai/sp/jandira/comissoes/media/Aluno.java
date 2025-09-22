@@ -1,7 +1,7 @@
 package br.senai.sp.jandira.comissoes.media;
 import java.util.Scanner;
 
-public class Calcular {
+public class Aluno {
 
     String nomedoaluno;
     double media1;
@@ -10,8 +10,7 @@ public class Calcular {
     double media4;
     double resultado;
     double calculo;
-    int passou;
-    int reprovado;
+
 
 
      public void obterDados(){
@@ -43,13 +42,15 @@ public class Calcular {
          calcularMedia();
      }
 
+     //Calculando Média e exibindo resultado
+
      public void calcularMedia(){
 
         calculo= media1 + media2 + media3 + media4;
         resultado= calculo/4;
 
 
-        if (resultado> 5) {
+        if (resultado>= 5) {
 
             System.out.println("Média do aluno " + resultado);
             System.out.println("O(a) aluno(a) " + nomedoaluno +  " Foi Aprovado");
@@ -60,10 +61,32 @@ public class Calcular {
             System.out.println("Média do aluno " + resultado);
             System.out.println("O(a) aluno(a) " + nomedoaluno +  " Foi reprovado");
 
+
+
         }
+         reniciarSistema();
      }
 
-     
+     public void reniciarSistema(){
+            int resposta;
 
+      Scanner leitorVoltar = new Scanner(System.in);
+
+
+         System.out.println(".");
+         System.out.println("Deseja Fazer outro calculo?");
+         System.out.print("Digite 1 para Sim ou 0 Para sair");
+         resposta = leitorVoltar.nextInt();
+
+         if (resposta == 1) {
+             obterDados();
+
+
+         } else {
+             System.out.println("======[Ate logo]=======");
+
+
+         }
+     }
 
 }
