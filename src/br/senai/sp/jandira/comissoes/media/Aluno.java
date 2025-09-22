@@ -24,7 +24,7 @@ public class Aluno {
 
 
 
-         System.out.print("Qual o nome do Aluno?");
+         System.out.print("Qual o nome do Aluno?  ");
          nomedoaluno = scanner.nextLine();
 
         //Obtendo Nota
@@ -50,16 +50,18 @@ public class Aluno {
         resultado= calculo/4;
 
 
-        if (resultado>= 5) {
+        if (resultado>= 5.0) {
 
             System.out.println("Média do aluno " + resultado);
-            System.out.println("O(a) aluno(a) " + nomedoaluno +  " Foi Aprovado");
+            System.out.println("O(a) aluno(a) " + nomedoaluno + " Foi Aprovado");  //Aluno Aprovado
 
+        } else if (resultado <4){
+            System.out.println("Média do aluno " + resultado);
+            System.out.println("O(a) aluno(a) " + nomedoaluno +  " Foi reprovado"); // Aluno de recuperação
 
         } else {
-
             System.out.println("Média do aluno " + resultado);
-            System.out.println("O(a) aluno(a) " + nomedoaluno +  " Foi reprovado");
+            System.out.println("O(a) aluno(a) " + nomedoaluno +  "  Esta de Recuperação"); //Aluno Reprovado
 
 
 
@@ -67,13 +69,15 @@ public class Aluno {
          reniciarSistema();
      }
 
+     //Reniciar o sistema
+
      public void reniciarSistema(){
             int resposta;
 
       Scanner leitorVoltar = new Scanner(System.in);
 
 
-         System.out.println(".");
+         System.out.println("-----------------------------");
          System.out.println("Deseja Fazer outro calculo?");
          System.out.print("Digite 1 para Sim ou 0 Para sair");
          resposta = leitorVoltar.nextInt();
